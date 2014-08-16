@@ -31,9 +31,9 @@ def check_argv():
 
 
 def check_height(height):
-  _, columns = os.popen('stty size', 'r').read().split()
+  _, columns = map(int, os.popen('stty size', 'r').read().split())
   if (height < 2) or (max_width(height) > columns) :
-    max_height = str((int(columns) - 1) / 2 + 1)
+    max_height = str((columns - 1) / 2 + 1)
     err_str = "{} is outside acceptable range (2-{}) and would look bad"
     print err_str.format(height, max_height)
     sys.exit(1)
