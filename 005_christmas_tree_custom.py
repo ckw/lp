@@ -40,7 +40,13 @@ def check_height(height):
 
 
 check_argv()
-height = int(sys.argv[1])
+
+try:
+  height = int(sys.argv[1])
+except ValueError:
+  print "'{}' is not a valid integer".format(sys.argv[1])
+  sys.exit(1)
+
 check_height(height)
 print_top(height)
 print_trunk(height)
