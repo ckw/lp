@@ -17,7 +17,7 @@ def slow_sort(l):
 
 def index_of_min(l, start):
   iom = start
-  for i in xrange(start, len(l)):
+  for i in xrange(start + 1, len(l)):
     if l[i] < l[iom]:
       iom = i
   return iom
