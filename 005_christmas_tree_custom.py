@@ -44,7 +44,7 @@ check_argv()
 try:
   height = int(sys.argv[1])
 except ValueError:
-  print "'{}' is not a valid integer".format(sys.argv[1])
+  print "'{}' is not an integer".format(sys.argv[1])
   sys.exit(1)
 
 check_height(height)
